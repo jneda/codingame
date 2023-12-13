@@ -1,7 +1,7 @@
 5
-3
+4
+C X X X X
 X X X X X
-X C X X X
 X X X X X
 X X X X X
 X X X X X
