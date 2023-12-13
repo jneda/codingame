@@ -1,4 +1,4 @@
-import { readFile, readline } from "../lib/fs";
+import { readFile } from "../lib/fs";
 
 type CardValue =
   | "2"
@@ -33,21 +33,21 @@ const cardValues = {
   A: 14,
 };
 
-function buildDeck(data: string[]) {
-  const deckSize = Number.parseInt(readline(data));
+function buildDeck(readline: () => string) {
+  const deckSize = Number.parseInt(readline());
   if (isNaN(deckSize)) throw new Error("Invalid data.");
 
   const deck: string[] = [];
   for (let i = 0; i < deckSize; i++) {
-    deck.push(readline(data));
+    deck.push(readline());
   }
 
   return deck;
 }
 
-export function buildDecks(data: string[]) {
-  const deckA = buildDeck(data);
-  const deckB = buildDeck(data);
+export function buildDecks(readline: () => string) {
+  const deckA = buildDeck(readline);
+  const deckB = buildDeck(readline);
   return [deckA, deckB];
 }
 
@@ -119,15 +119,9 @@ export function playGame(deckA: string[], deckB: string[]) {
 }
 
 async function main() {
-  let data: string[];
-  try {
-    data = await readFile(__dirname, "test.txt");
-  } catch (error) {
-    console.error(error);
-    return 1;
-  }
+  const readline = await readFile(__dirname, "test.txt");
 
-  const [deckA, deckB] = buildDecks(data);
+  const [deckA, deckB] = buildDecks(readline);
   const result = playGame(deckA, deckB);
   console.log(result);
 }
