@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs/promises";
+import type { TestCases } from "../types/TestCases";
 
 export async function readFile(dirname: string, filename: string) {
   const filepath = path.resolve(dirname, filename);
@@ -25,7 +26,7 @@ export async function readFile(dirname: string, filename: string) {
 export async function getTestCases(
   dirname: string,
   filename: string
-): Promise<[string[][], string[][]]> {
+): Promise<TestCases> {
   const filepath = path.resolve(dirname, filename);
   let file: string;
   try {
@@ -53,7 +54,7 @@ export async function getTestCases(
       }
       current.push(line);
     }
-    
+
     return [inputs, expected];
   } catch (error) {
     console.error(error);
