@@ -1,0 +1,47 @@
+2
+A 20
+B 10
+( A B )
+
+30.0
+
+2
+C 20
+D 25
+[ C D ]
+
+11.1
+
+3
+A 24
+B 8
+C 48
+[ ( A B ) [ C A ] ]
+
+10.7
+
+7
+Alfa 1
+Bravo 1
+Charlie 12
+Delta 4
+Echo 2
+Foxtrot 10
+Golf 8
+( Alfa [ Charlie Delta ( Bravo [ Echo ( Foxtrot Golf ) ] ) ] )
+
+2.4
+
+3
+Alef 30
+Bet 20
+Vet 10
+( Alef [ ( Bet Bet Bet ) ( Vet [ ( Vet Vet ) ( Vet [ Bet Bet ] ) ] ) ] )
+
+45.0
+
+1
+Star 78
+[ ( [ Star ( Star Star ) ] [ Star ( Star Star ) ] Star ) ( [ Star ( Star Star ) ] [ Star ( Star Star ) ] Star ) ]
+
+91.0
