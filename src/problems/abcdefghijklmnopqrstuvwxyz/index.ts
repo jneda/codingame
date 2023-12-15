@@ -1,6 +1,6 @@
 // https://www.codingame.com/ide/puzzle/abcdefghijklmnopqrstuvwxyz
-import { getTestCases } from "../lib/fs";
-import type { TestCases } from "../types/TestCases";
+import { getTestCases } from "../../lib/fs";
+import type { TestCases } from "../../types/TestCases";
 
 (async function main() {
   let testCases: TestCases;

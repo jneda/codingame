@@ -1,5 +1,5 @@
-import { getTestCases } from "../lib/fs";
-import type { TestCases } from "../types/TestCases";
+import { getTestCases } from "../../lib/fs";
+import type { TestCases } from "../../types/TestCases";
 
 /**
  * The main function that executes the program.

@@ -1,4 +1,4 @@
-import { getTestCases } from "../lib/fs";
+import { getTestCases } from "../../lib/fs";
 
 /**
  * Parses the input array and returns an object containing the width and height splits.

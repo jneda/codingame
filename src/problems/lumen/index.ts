@@ -1,4 +1,4 @@
-import { readFile } from "../lib/fs";
+import { readFile } from "../../lib/fs";
 
 /**
  * Reads data from a file and returns an object containing room size, candles, and light level.

@@ -1,6 +1,6 @@
 // https://www.codingame.com/ide/puzzle/logic-gates
-import { getTestCases } from "../lib/fs";
-import type { TestCases } from "../types/TestCases";
+import { getTestCases } from "../../lib/fs";
+import type { TestCases } from "../../types/TestCases";
 
 async function main() {
   type GateType = "AND" | "OR" | "XOR" | "NAND" | "NOR" | "NXOR";

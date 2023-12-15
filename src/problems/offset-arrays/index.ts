@@ -1,4 +1,4 @@
-import { readFile } from "../lib/fs";
+import { readFile } from "../../lib/fs";
 
 type ArraysDictionary = { [k: string]: { [k: string]: number } };
 

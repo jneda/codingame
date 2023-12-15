@@ -1,6 +1,6 @@
 // https://www.codingame.com/ide/puzzle/equivalent-resistance-circuit-building
-import { getTestCases } from "../lib/fs";
-import type { TestCases } from "../types/TestCases";
+import { getTestCases } from "../../lib/fs";
+import type { TestCases } from "../../types/TestCases";
 
 type ResistorDictionary = Record<string, number>;
 type Brackets = "[" | "]" | "(" | ")";

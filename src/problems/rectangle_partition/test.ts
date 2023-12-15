@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from "@jest/globals";
-import { getTestCases } from "../lib/fs";
+import { getTestCases } from "../../lib/fs";
 import { countSquares } from ".";
 
 describe("countSquares", () => {
