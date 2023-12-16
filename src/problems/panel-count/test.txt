@@ -1,0 +1,1762 @@
+1
+Gender
+5
+Leo Male
+Samuel Male
+Maya Female
+Diane Female
+Mael Male
+1
+Gender=Female
+
+2
+
+1
+Town
+7
+Eliott Paris
+Luna Paris
+Eleonore Nantes
+Maelys Montpellier
+Nathan Lille
+Adam Nantes
+Diane Lille
+1
+Town=Lille
+
+2
+
+3
+Gender
+Age
+Town
+12
+Nina Female 27 Nantes
+Mehdi Male 61 Marseille
+Marius Male 6 Lyon
+Felix Male 20 Paris
+Leonard Male 57 Strasbourg
+Lila Female 74 Montpellier
+Victor Male 7 Toulouse
+Capucine Female 82 Nantes
+Faustine Female 27 Lyon
+Yanis Male 55 Lyon
+Clara Female 43 Toulouse
+Melissa Female 91 Lyon
+2
+Town=Lyon
+Gender=Male
+
+4
+6
+
+3
+Gender
+Age
+Town
+12
+Nina Female 27 Nantes
+Mehdi Male 61 Marseille
+Marius Male 6 Lyon
+Felix Male 20 Paris
+Leonard Male 57 Strasbourg
+Lila Female 74 Montpellier
+Victor Male 7 Toulouse
+Capucine Female 82 Nantes
+Faustine Female 27 Lyon
+Yanis Male 55 Lyon
+Clara Female 43 Toulouse
+Melissa Female 91 Lyon
+1
+Gender=Male AND Town=Lyon
+
+2
+
+3
+Gender
+Age
+Town
+12
+Gabin Male 78 Lyon
+Nicolas Male 54 Strasbourg
+Chloe Female 56 Bordeaux
+Hadrien Male 66 Strasbourg
+Leon Male 58 Lille
+Eden Female 91 Nantes
+Zoe Female 76 Montpellier
+Nicolas Male 54 Strasbourg
+Iris Female 19 Lille
+Pierre Male 79 Lille
+Louise Female 89 Marseille
+Eloise Female 10 Nice
+2
+Gender=Male AND Car=Audi
+EyeColor=Blue AND Town=Nantes
+
+0
+0
+
+3
+Gender
+Age
+Town
+14
+Violette Female 78 Lyon
+Rose Female 25 Toulouse
+Simon Male 6 Paris
+Esther Female 35 Lyon
+Chloe Female 56 Bordeaux
+Alix Female 12 Toulouse
+Esther Female 35 Lyon
+Hugo Male 65 Bordeaux
+Mila Female 72 Lille
+Jules Male 60 Nice
+Adele Female 86 Strasbourg
+Raphael Male 98 Lyon
+Sophie Female 98 Marseille
+Marie Female 56 Montpellier
+2
+Gender=Male AND Town=Rome
+Town=Paris AND Age=99
+
+0
+0
+
+5
+Gender
+Age
+Town
+CSP
+FAI
+200
+Gabriel Male 99 Marseille Retraite SFR
+Alexandre Male 59 Bordeaux Employe SFR
+Arthur Male 31 Marseille Agriculteur Bouygues
+Adam Male 13 Nantes Ouvrier Orange
+Raphael Male 98 Lyon Employe Free
+Louis Male 55 Nantes Inactif SFR
+Paul Male 92 Nantes Employe SFR
+Antoine Male 78 Nice Inactif Free
+Maxime Male 85 Nantes Employe Orange
+Thomas Male 23 Paris Employe Free
+Victor Male 7 Toulouse Inactif Bouygues
+Lucas Male 20 Nice Retraite Orange
+Jules Male 60 Nice Cadre Free
+Nathan Male 6 Lille Employe SFR
+Hugo Male 65 Bordeaux Artisan Free
+Sacha Male 59 Strasbourg Agriculteur Free
+Mohamed Male 50 Toulouse Agriculteur Bouygues
+Enzo Male 89 Strasbourg Employe Bouygues
+Gaspard Male 83 Strasbourg Artisan Orange
+Clement Male 93 Marseille Inactif Free
+Samuel Male 76 Lille Retraite Free
+Ethan Male 50 Marseille Inactif Free
+Leo Male 5 Nice Agriculteur SFR
+Adrien Male 38 Lyon Inactif Orange
+Martin Male 89 Montpellier Retraite Free
+Rayan Male 89 Lille Retraite Bouygues
+Baptiste Male 71 Lille Employe Free
+Yanis Male 55 Lyon Retraite Orange
+Simon Male 6 Paris Cadre Free
+Joseph Male 22 Toulouse Retraite Bouygues
+Mathis Male 80 Montpellier Inactif Free
+Oscar Male 87 Lyon Cadre SFR
+Alexis Male 54 Bordeaux Employe Bouygues
+Pierre Male 79 Lille Agriculteur SFR
+Noah Male 37 Lille Cadre Free
+Axel Male 46 Lyon Retraite Free
+Theo Male 50 Montpellier Inactif Free
+Romain Male 67 Lille Retraite Bouygues
+Valentin Male 95 Toulouse Inactif Orange
+Augustin Male 14 Strasbourg Cadre SFR
+Julien Male 39 Nice Employe Orange
+Nicolas Male 54 Strasbourg Employe Free
+Maxence Male 55 Bordeaux Employe Orange
+Noe Male 93 Nice Artisan SFR
+Benjamin Male 45 Marseille Retraite Bouygues
+Quentin Male 46 Lille Artisan Bouygues
+Tom Male 94 Nice Cadre Orange
+Charles Male 98 Toulouse Employe Orange
+David Male 30 Lyon Cadre SFR
+Jean Male 50 Nice Retraite Bouygues
+Eliott Male 69 Paris Cadre Free
+Aaron Male 98 Montpellier Agriculteur Bouygues
+Elias Male 46 Marseille Cadre Orange
+Matthieu Male 87 Nice Cadre Orange
+Tristan Male 70 Bordeaux Inactif Orange
+Timothee Male 38 Lyon Employe SFR
+Mathieu Male 19 Paris Artisan SFR
+Matteo Male 4 Lille Employe Free
+William Male 48 Strasbourg Retraite Bouygues
+Amine Male 94 Lyon Artisan Bouygues
+Felix Male 20 Paris Inactif Free
+Côme Male 69 Marseille Employe Free
+Ruben Male 48 Paris Retraite Free
+Ulysse Male 17 Nice Employe Orange
+Antonin Male 24 Montpellier Agriculteur Bouygues
+Guillaume Male 6 Marseille Agriculteur Bouygues
+Aurelien Male 26 Nantes Retraite Free
+Robin Male 53 Montpellier Employe Free
+Mael Male 71 Nantes Cadre Orange
+Kevin Male 20 Marseille Retraite Bouygues
+Mehdi Male 61 Marseille Agriculteur Free
+Ismael Male 34 Marseille Inactif Orange
+Liam Male 86 Strasbourg Ouvrier Orange
+Gabin Male 78 Lyon Agriculteur Bouygues
+Noam Male 15 Strasbourg Ouvrier SFR
+Evan Male 81 Montpellier Ouvrier SFR
+Marius Male 6 Lyon Agriculteur Free
+Mathias Male 68 Marseille Retraite Bouygues
+Isaac Male 41 Bordeaux Inactif SFR
+Samy Male 25 Nantes Retraite SFR
+Ibrahim Male 71 Marseille Employe Orange
+Basile Male 99 Lille Retraite SFR
+Daniel Male 30 Toulouse Artisan SFR
+Emile Male 48 Toulouse Agriculteur Orange
+Lucien Male 33 Toulouse Cadre Bouygues
+Elie Male 26 Toulouse Retraite Bouygues
+Rayane Male 50 Marseille Ouvrier Bouygues
+Leonard Male 57 Strasbourg Employe SFR
+Thibault Male 39 Nantes Retraite SFR
+Achille Male 16 Bordeaux Artisan SFR
+Leon Male 58 Lille Artisan Orange
+Edouard Male 85 Paris Retraite Free
+Hadrien Male 66 Strasbourg Employe Free
+Lenny Male 46 Marseille Agriculteur Free
+Matheo Male 32 Montpellier Cadre Orange
+Malo Male 15 Lille Artisan Free
+Titouan Male 77 Marseille Agriculteur Bouygues
+Solal Male 32 Marseille Cadre Bouygues
+Joshua Male 43 Lille Artisan Free
+Max Male 76 Lyon Artisan Free
+Louise Female 89 Marseille Retraite Bouygues
+Camille Female 14 Lyon Agriculteur SFR
+Emma Female 69 Lyon Inactif Free
+Ines Female 92 Lyon Cadre Free
+Chloe Female 56 Bordeaux Employe Bouygues
+Sarah Female 52 Lille Inactif Bouygues
+Alice Female 65 Nice Ouvrier Bouygues
+Lea Female 39 Marseille Agriculteur Bouygues
+Juliette Female 30 Lyon Employe Free
+Jeanne Female 40 Toulouse Cadre Orange
+Eva Female 10 Marseille Agriculteur Orange
+Clara Female 43 Toulouse Retraite Orange
+Lina Female 56 Paris Agriculteur Bouygues
+Anna Female 11 Marseille Agriculteur Orange
+Charlotte Female 25 Nantes Cadre Bouygues
+Mathilde Female 35 Lyon Agriculteur SFR
+Marie Female 56 Montpellier Retraite SFR
+Manon Female 33 Montpellier Inactif Bouygues
+Lucie Female 81 Paris Agriculteur Free
+Anaïs Female 88 Lyon Ouvrier Orange
+Jade Female 33 Strasbourg Ouvrier Bouygues
+Zoe Female 76 Montpellier Artisan Bouygues
+Nina Female 27 Nantes Artisan Orange
+Lou Female 46 Lyon Retraite Free
+Clemence Female 50 Marseille Artisan SFR
+Pauline Female 26 Nantes Employe Bouygues
+Lisa Female 92 Nice Inactif SFR
+Adele Female 86 Strasbourg Artisan SFR
+Gabrielle Female 92 Lyon Employe Bouygues
+Romane Female 19 Nantes Agriculteur SFR
+Julia Female 96 Toulouse Artisan SFR
+Victoria Female 66 Lille Artisan Bouygues
+Emilie Female 19 Bordeaux Artisan Free
+Rose Female 25 Toulouse Employe Bouygues
+Julie Female 72 Nice Cadre Bouygues
+Margaux Female 69 Lyon Artisan Free
+Lena Female 73 Nice Inactif SFR
+Victoire Female 18 Toulouse Inactif Free
+Lola Female 68 Strasbourg Ouvrier Bouygues
+Valentine Female 57 Nantes Ouvrier SFR
+Agathe Female 53 Bordeaux Artisan SFR
+Alix Female 12 Toulouse Cadre Bouygues
+Elisa Female 23 Nice Employe Orange
+Elise Female 29 Lyon Ouvrier Bouygues
+Margot Female 15 Marseille Artisan SFR
+Yasmine Female 87 Lyon Cadre Bouygues
+Laura Female 75 Nantes Agriculteur Free
+Noa Female 98 Nantes Employe Free
+Sofia Female 40 Strasbourg Artisan Bouygues
+Noemie Female 19 Toulouse Retraite Free
+Heloïse Female 95 Montpellier Ouvrier Bouygues
+Sara Female 98 Nantes Employe Free
+Apolline Female 59 Montpellier Cadre Bouygues
+Salome Female 3 Marseille Ouvrier Bouygues
+Diane Female 65 Lille Employe Free
+Maya Female 23 Paris Employe SFR
+Ambre Female 55 Toulouse Agriculteur Bouygues
+Elsa Female 5 Lyon Cadre SFR
+Josephine Female 65 Bordeaux Agriculteur Orange
+Capucine Female 82 Nantes Employe SFR
+Ava Female 18 Nantes Ouvrier Bouygues
+Sasha Female 21 Montpellier Employe SFR
+Eleonore Female 70 Nantes Inactif Free
+Iris Female 19 Lille Inactif Free
+Fatoumata Female 78 Montpellier Agriculteur Orange
+Alicia Female 38 Montpellier Cadre Free
+Eden Female 91 Nantes Retraite Free
+Mila Female 72 Lille Employe SFR
+Nour Female 96 Lille Artisan Orange
+Andrea Female 67 Montpellier Ouvrier Free
+Garance Female 63 Lille Retraite Bouygues
+Aya Female 45 Lyon Agriculteur SFR
+Violette Female 78 Lyon Ouvrier Free
+Constance Female 53 Montpellier Employe SFR
+Justine Female 53 Nice Artisan Orange
+Melissa Female 91 Lyon Inactif Bouygues
+Oceane Female 64 Bordeaux Retraite Bouygues
+Olivia Female 16 Lyon Artisan Bouygues
+Esther Female 35 Lyon Ouvrier Bouygues
+Ines Female 94 Nice Inactif SFR
+Luna Female 23 Paris Employe Free
+Suzanne Female 29 Lille Ouvrier Orange
+Mariam Female 13 Paris Agriculteur Orange
+Maelys Female 65 Montpellier Ouvrier SFR
+Myriam Female 98 Strasbourg Artisan Free
+Sophie Female 98 Marseille Employe Bouygues
+Celia Female 30 Strasbourg Retraite Bouygues
+Lila Female 74 Montpellier Artisan Bouygues
+Madeleine Female 36 Montpellier Employe Free
+Marion Female 8 Paris Employe Orange
+Anouk Female 34 Strasbourg Retraite Bouygues
+Stella Female 86 Toulouse Agriculteur SFR
+Eloïse Female 10 Nice Inactif Orange
+Charlie Female 85 Paris Agriculteur SFR
+Leonie Female 70 Nantes Agriculteur SFR
+Chiara Female 25 Marseille Cadre Bouygues
+Carla Female 80 Nantes Cadre Orange
+Blanche Female 68 Montpellier Retraite Orange
+Faustine Female 27 Lyon Retraite SFR
+Claire Female 34 Strasbourg Employe Orange
+10
+Gender=Male AND Town=Lyon AND FAI=Bouygues
+CSP=Retraite AND Town=Bordeaux
+Town=Toulouse AND Gender=Female AND FAI=Orange
+Town=Nantes AND Gender=Male AND FAI=Orange AND CSP=Cadre AND Age=45
+Age=50
+CSP=Artisan
+CSP=Cadre AND Town=Paris
+FAI=Free AND Gender=Male
+Gender=Male AND Age=4
+FAI=Free AND Gender=Male AND CSP=Employe
+
+2
+1
+2
+0
+6
+28
+2
+32
+1
+8
+
+4
+P1
+P2
+P3
+P4
+800
+A 5 7 3 2
+B 7 7 7 1
+C 8 7 3 3
+D 8 4 6 9
+E 8 1 3 9
+F 1 4 9 8
+G 8 4 8 9
+H 1 5 2 7
+I 5 9 2 6
+J 1 8 8 9
+K 3 8 3 8
+L 7 1 5 4
+M 2 3 9 8
+N 2 8 9 8
+O 4 5 9 3
+P 6 8 5 4
+Q 3 9 1 5
+R 8 9 8 3
+S 7 5 6 7
+T 5 1 7 5
+U 7 8 7 8
+V 5 7 8 7
+W 6 3 7 2
+X 7 9 1 8
+Y 6 8 2 6
+A 7 1 6 7
+B 1 7 2 2
+C 6 9 5 9
+D 8 1 4 1
+E 5 2 6 5
+F 9 7 2 2
+G 8 9 3 5
+H 5 1 5 8
+I 2 5 3 9
+J 1 5 1 8
+K 8 5 5 6
+L 5 5 5 7
+M 8 2 7 1
+N 1 6 8 3
+O 3 2 9 5
+P 7 3 9 9
+Q 2 8 6 9
+R 9 4 8 3
+S 3 7 7 8
+T 2 3 1 4
+U 6 8 7 9
+V 7 2 3 1
+W 9 2 5 5
+X 2 9 7 5
+Y 9 6 4 6
+A 3 3 1 8
+B 1 7 2 8
+C 5 8 9 8
+D 8 1 9 7
+E 5 4 9 8
+F 6 2 2 1
+G 7 1 4 1
+H 9 3 2 1
+I 6 6 3 8
+J 5 9 2 6
+K 8 7 6 9
+L 3 4 6 4
+M 2 6 9 8
+N 6 4 6 5
+O 2 5 7 4
+P 5 8 9 8
+Q 5 9 8 1
+R 9 7 2 2
+S 9 4 7 4
+T 1 9 1 4
+U 3 5 5 4
+V 8 5 7 8
+W 7 2 4 1
+X 1 6 8 7
+Y 4 6 2 4
+A 4 1 9 4
+B 3 2 5 4
+C 9 8 8 6
+D 7 7 5 5
+E 7 1 8 4
+F 9 4 6 9
+G 5 3 7 8
+H 7 7 4 1
+I 1 7 2 2
+J 9 6 8 1
+K 3 1 2 1
+L 2 1 6 1
+M 1 4 7 7
+N 8 2 7 2
+O 4 4 7 4
+P 4 8 2 2
+Q 5 2 5 4
+R 9 9 7 3
+S 7 1 9 3
+T 2 5 5 6
+U 5 1 2 4
+V 3 4 3 5
+W 1 9 1 9
+X 6 3 9 3
+Y 1 2 6 5
+A 5 3 3 7
+B 4 2 8 1
+C 4 5 1 9
+D 2 8 9 1
+E 6 5 6 9
+F 2 6 8 1
+G 5 3 6 2
+H 3 6 2 7
+I 7 7 1 2
+J 8 3 3 7
+K 5 3 1 6
+L 4 8 4 1
+M 8 4 5 8
+N 7 2 9 9
+O 5 8 3 4
+P 5 8 8 2
+Q 8 5 6 6
+R 6 5 8 4
+S 3 8 7 6
+T 4 6 8 4
+U 8 8 5 3
+V 1 7 9 8
+W 9 4 1 8
+X 4 8 5 2
+Y 3 7 6 1
+A 3 6 2 5
+B 8 4 2 1
+C 3 4 8 2
+D 7 1 5 6
+E 1 9 7 4
+F 5 4 3 9
+G 5 3 4 3
+H 2 5 8 8
+I 6 2 1 2
+J 2 7 9 4
+K 6 6 1 8
+L 1 4 4 5
+M 5 4 8 9
+N 9 1 8 7
+O 6 3 9 7
+P 2 1 6 9
+Q 2 3 9 6
+R 3 1 5 4
+S 8 1 3 9
+T 1 2 4 5
+U 4 7 3 7
+V 9 9 2 4
+W 2 6 8 4
+X 3 3 4 3
+Y 3 2 4 4
+A 1 3 4 6
+B 8 8 6 5
+C 5 8 1 4
+D 1 6 5 3
+E 8 5 2 8
+F 9 8 7 8
+G 7 7 7 8
+H 5 9 6 5
+I 5 7 3 6
+J 5 6 2 5
+K 2 1 9 7
+L 9 3 1 2
+M 4 9 6 5
+N 3 9 8 9
+O 7 7 4 8
+P 6 1 8 8
+Q 3 2 6 8
+R 6 9 3 2
+S 9 6 3 4
+T 4 4 1 4
+U 9 3 2 4
+V 4 4 7 2
+W 6 2 3 2
+X 7 8 6 5
+Y 1 9 8 4
+A 8 6 4 8
+B 4 6 7 3
+C 8 9 3 9
+D 8 7 1 1
+E 6 2 7 3
+F 4 1 1 7
+G 2 7 3 9
+H 8 5 9 2
+I 3 1 8 4
+J 9 7 5 1
+K 8 4 8 9
+L 2 3 2 5
+M 9 8 4 4
+N 2 6 8 7
+O 3 3 8 3
+P 9 1 3 2
+Q 6 8 9 9
+R 6 2 8 1
+S 9 2 3 6
+T 8 6 3 2
+U 9 2 7 1
+V 3 1 1 6
+W 4 3 5 1
+X 4 5 2 8
+Y 4 2 5 9
+A 2 1 5 1
+B 3 4 1 7
+C 6 5 1 7
+D 8 5 6 5
+E 9 2 1 3
+F 1 9 2 7
+G 9 6 4 8
+H 7 6 7 9
+I 3 3 1 5
+J 6 6 2 5
+K 4 6 3 3
+L 1 2 3 9
+M 4 5 4 4
+N 7 2 4 2
+O 1 6 1 9
+P 3 7 3 9
+Q 8 8 3 4
+R 6 5 2 2
+S 3 1 9 3
+T 2 8 5 2
+U 5 5 2 6
+V 2 6 5 2
+W 3 8 1 4
+X 1 5 2 7
+Y 9 1 4 1
+A 6 1 9 8
+B 2 4 6 6
+C 6 8 9 9
+D 1 8 6 6
+E 3 1 9 7
+F 6 1 5 1
+G 7 8 8 3
+H 9 4 6 5
+I 1 3 8 3
+J 6 1 3 3
+K 3 6 2 5
+L 6 2 7 8
+M 5 3 7 7
+N 3 3 9 1
+O 5 2 3 2
+P 8 1 1 6
+Q 4 7 3 4
+R 1 8 9 7
+S 6 7 5 1
+T 2 9 3 3
+U 5 2 1 2
+V 3 4 6 9
+W 4 4 2 6
+X 5 9 6 3
+Y 6 3 8 1
+A 6 4 3 1
+B 9 7 8 9
+C 7 1 5 2
+D 3 2 7 3
+E 1 4 4 3
+F 8 4 3 9
+G 7 2 1 8
+H 8 9 3 2
+I 5 8 7 8
+J 3 2 1 1
+K 3 7 3 9
+L 2 6 4 8
+M 2 6 9 3
+N 7 8 2 2
+O 7 5 8 2
+P 9 1 8 9
+Q 7 3 8 5
+R 9 3 4 5
+S 6 3 3 8
+T 3 8 2 3
+U 7 6 1 2
+V 2 1 1 2
+W 1 5 6 6
+X 1 8 8 4
+Y 8 4 7 1
+A 9 2 4 9
+B 4 4 1 5
+C 9 9 5 7
+D 3 5 2 7
+E 5 5 1 4
+F 9 1 6 5
+G 1 1 4 6
+H 7 1 1 4
+I 7 7 5 3
+J 6 1 1 8
+K 3 9 2 3
+L 1 9 6 4
+M 1 9 5 1
+N 2 1 8 7
+O 3 6 7 8
+P 4 7 6 2
+Q 3 6 9 5
+R 4 7 3 1
+S 8 3 6 9
+T 4 9 6 9
+U 7 8 4 3
+V 2 7 7 3
+W 8 1 5 3
+X 5 6 9 9
+Y 1 7 9 1
+A 7 2 7 7
+B 4 6 7 9
+C 1 3 3 1
+D 2 9 1 6
+E 7 4 4 8
+F 6 9 3 2
+G 5 6 6 6
+H 1 8 3 5
+I 7 5 7 5
+J 3 3 5 7
+K 2 6 9 7
+L 7 1 7 2
+M 6 4 6 6
+N 8 2 9 1
+O 7 2 5 1
+P 9 5 7 7
+Q 2 7 5 2
+R 8 4 9 9
+S 7 6 9 2
+T 9 4 3 3
+U 7 4 4 9
+V 7 2 5 8
+W 5 7 6 2
+X 1 4 2 7
+Y 5 2 8 2
+A 3 3 5 3
+B 6 2 8 7
+C 2 7 8 3
+D 8 9 4 7
+E 3 5 1 1
+F 7 7 9 6
+G 3 5 9 3
+H 5 9 6 9
+I 8 5 4 4
+J 3 4 4 9
+K 9 2 9 1
+L 1 9 6 3
+M 9 6 1 3
+N 7 6 9 3
+O 1 8 6 8
+P 1 1 3 2
+Q 3 5 5 4
+R 2 9 4 7
+S 6 4 4 9
+T 9 4 7 5
+U 9 1 7 4
+V 6 6 9 7
+W 4 9 8 6
+X 8 7 1 2
+Y 2 2 8 4
+A 8 4 3 2
+B 9 3 5 1
+C 1 8 9 2
+D 5 2 4 6
+E 5 5 1 8
+F 5 3 5 1
+G 4 2 4 1
+H 3 4 5 4
+I 6 2 7 4
+J 9 7 7 4
+K 4 1 9 6
+L 2 4 6 3
+M 2 7 2 9
+N 6 4 2 9
+O 8 5 8 6
+P 7 1 2 5
+Q 4 9 7 7
+R 6 9 7 5
+S 5 5 5 3
+T 8 6 6 3
+U 7 3 8 5
+V 6 6 3 6
+W 7 4 5 2
+X 6 4 5 6
+Y 9 8 6 7
+A 8 4 8 6
+B 4 5 2 7
+C 7 4 6 3
+D 7 6 2 1
+E 1 7 6 4
+F 7 7 8 8
+G 2 2 6 6
+H 4 1 9 3
+I 9 5 2 5
+J 6 1 4 8
+K 1 5 7 5
+L 2 2 1 1
+M 4 2 1 6
+N 8 6 5 8
+O 3 8 6 8
+P 2 2 4 3
+Q 9 3 6 9
+R 9 8 7 1
+S 8 4 1 1
+T 1 6 1 2
+U 6 2 8 7
+V 8 5 9 5
+W 7 9 5 6
+X 9 6 3 8
+Y 8 6 4 8
+A 2 6 9 2
+B 9 3 4 6
+C 8 1 8 1
+D 6 7 5 1
+E 1 3 8 8
+F 4 8 1 9
+G 2 4 9 2
+H 8 3 9 5
+I 5 8 8 5
+J 3 8 1 5
+K 2 1 1 3
+L 4 6 6 2
+M 6 9 4 8
+N 5 4 5 7
+O 3 1 6 9
+P 9 9 7 4
+Q 4 6 4 5
+R 6 4 5 3
+S 4 7 4 2
+T 8 5 8 1
+U 6 1 4 1
+V 8 6 8 2
+W 1 9 7 4
+X 7 2 4 3
+Y 7 8 6 6
+A 9 4 9 4
+B 9 4 6 6
+C 7 5 3 5
+D 6 6 8 5
+E 3 6 5 7
+F 9 2 6 3
+G 2 9 2 1
+H 1 8 7 8
+I 2 4 5 5
+J 7 8 2 7
+K 8 4 6 3
+L 5 2 2 9
+M 1 3 8 2
+N 8 9 7 9
+O 2 2 5 5
+P 1 8 7 6
+Q 4 8 4 8
+R 6 4 1 7
+S 4 3 2 2
+T 4 8 7 4
+U 7 4 9 5
+V 8 6 2 6
+W 5 3 6 8
+X 9 3 1 2
+Y 7 1 3 4
+A 2 9 1 9
+B 7 3 6 6
+C 7 8 2 2
+D 5 5 9 4
+E 7 2 9 5
+F 5 4 6 8
+G 1 5 3 2
+H 6 1 2 9
+I 5 5 2 3
+J 4 9 3 4
+K 6 7 2 8
+L 1 5 7 8
+M 9 2 5 6
+N 9 7 1 4
+O 5 6 2 1
+P 2 7 8 5
+Q 1 6 5 9
+R 7 3 1 6
+S 7 9 3 8
+T 3 3 3 8
+U 6 3 9 5
+V 3 3 5 4
+W 2 7 5 1
+X 3 9 3 4
+Y 5 4 3 9
+A 4 6 5 3
+B 9 9 5 6
+C 3 1 5 3
+D 1 7 9 4
+E 8 6 4 8
+F 7 2 5 9
+G 8 3 3 6
+H 4 8 7 2
+I 4 7 4 9
+J 8 8 6 4
+K 7 8 5 8
+L 5 3 5 4
+M 6 4 7 7
+N 3 2 5 5
+O 3 2 7 3
+P 1 6 6 3
+Q 9 7 2 6
+R 4 9 1 8
+S 6 8 5 8
+T 1 2 1 3
+U 1 1 2 8
+V 1 5 4 9
+W 5 4 3 3
+X 5 2 1 8
+Y 1 3 6 1
+A 5 8 7 5
+B 1 9 6 2
+C 3 8 4 9
+D 1 6 5 6
+E 6 4 2 6
+F 8 7 4 3
+G 6 2 3 4
+H 8 7 6 8
+I 9 8 8 8
+J 6 3 1 8
+K 1 4 6 4
+L 3 1 3 8
+M 5 3 5 9
+N 5 6 3 7
+O 6 4 1 4
+P 6 2 3 5
+Q 4 3 2 4
+R 3 6 1 3
+S 5 4 2 2
+T 7 8 4 9
+U 4 8 1 4
+V 3 6 8 2
+W 6 6 3 7
+X 9 2 6 2
+Y 5 5 2 9
+A 5 2 8 7
+B 9 2 6 6
+C 8 5 3 4
+D 3 9 7 5
+E 5 8 7 4
+F 6 7 6 2
+G 6 1 2 8
+H 7 7 5 9
+I 5 8 7 4
+J 7 2 1 7
+K 9 2 2 7
+L 4 4 8 2
+M 6 1 4 8
+N 4 3 7 9
+O 7 8 1 9
+P 1 8 2 1
+Q 9 6 4 2
+R 1 3 3 9
+S 8 4 9 9
+T 5 6 8 5
+U 6 3 7 6
+V 2 7 4 2
+W 3 4 7 6
+X 9 6 5 5
+Y 4 3 2 7
+A 2 9 3 2
+B 2 6 7 7
+C 7 3 6 5
+D 4 8 5 9
+E 1 6 8 2
+F 1 5 7 2
+G 4 8 8 8
+H 6 9 9 9
+I 1 4 8 4
+J 9 5 7 5
+K 6 3 4 8
+L 3 3 3 3
+M 8 8 7 1
+N 6 6 9 1
+O 5 3 9 2
+P 8 6 3 4
+Q 5 1 2 3
+R 7 2 2 9
+S 5 2 8 5
+T 8 9 6 6
+U 6 2 2 1
+V 3 4 8 3
+W 5 1 6 7
+X 1 7 8 4
+Y 4 8 6 9
+A 7 2 3 9
+B 5 8 2 2
+C 5 1 7 5
+D 4 4 5 8
+E 6 7 7 2
+F 2 1 4 5
+G 4 8 9 5
+H 9 1 9 4
+I 2 7 7 4
+J 7 3 8 5
+K 9 1 5 9
+L 9 7 1 9
+M 1 5 1 2
+N 4 8 3 2
+O 1 1 1 6
+P 4 8 7 9
+Q 8 9 1 3
+R 8 9 9 6
+S 6 1 6 1
+T 1 6 2 7
+U 8 6 1 4
+V 2 7 3 2
+W 4 5 4 3
+X 8 8 5 6
+Y 2 7 1 5
+A 4 2 1 7
+B 8 4 3 2
+C 5 1 3 8
+D 3 6 7 5
+E 1 7 3 6
+F 6 9 6 4
+G 5 8 4 3
+H 9 1 2 4
+I 3 1 7 4
+J 5 1 5 4
+K 2 5 4 2
+L 5 7 6 3
+M 1 3 2 9
+N 6 5 4 4
+O 1 2 2 6
+P 3 7 9 5
+Q 8 4 1 3
+R 2 6 6 5
+S 8 1 1 4
+T 4 5 6 6
+U 9 6 7 4
+V 2 3 2 7
+W 7 7 7 1
+X 4 6 3 1
+Y 2 5 1 4
+A 9 7 2 3
+B 1 1 6 9
+C 7 9 4 8
+D 4 4 8 4
+E 9 4 1 1
+F 9 2 8 8
+G 5 7 4 4
+H 3 1 6 4
+I 5 3 7 4
+J 9 6 1 2
+K 2 2 6 7
+L 4 2 8 6
+M 1 2 8 5
+N 3 2 8 5
+O 5 4 4 7
+P 3 5 3 6
+Q 1 9 1 9
+R 2 2 4 1
+S 4 1 8 8
+T 4 3 4 2
+U 4 2 8 6
+V 8 9 9 5
+W 3 6 5 5
+X 5 1 4 3
+Y 1 3 5 9
+A 2 7 3 5
+B 3 1 5 3
+C 6 7 3 7
+D 7 2 9 2
+E 5 1 5 4
+F 6 6 3 7
+G 1 5 7 4
+H 9 5 4 6
+I 1 3 4 6
+J 6 3 9 2
+K 9 7 4 3
+L 8 6 4 1
+M 4 3 9 4
+N 6 6 2 8
+O 6 4 9 1
+P 9 9 7 4
+Q 9 5 2 9
+R 9 9 2 9
+S 7 2 8 9
+T 4 7 9 1
+U 2 4 8 3
+V 2 9 6 7
+W 1 8 8 8
+X 6 8 9 5
+Y 3 7 1 3
+A 3 4 5 4
+B 5 4 5 5
+C 3 7 6 6
+D 7 8 9 1
+E 6 7 2 2
+F 8 6 4 8
+G 3 8 2 9
+H 3 6 6 7
+I 9 7 2 7
+J 7 3 8 2
+K 7 1 2 4
+L 5 3 8 6
+M 5 3 4 8
+N 3 8 4 3
+O 9 8 1 4
+P 4 6 8 1
+Q 5 9 7 2
+R 7 3 8 9
+S 9 6 2 9
+T 8 3 4 8
+U 6 8 6 5
+V 6 3 3 5
+W 5 9 6 8
+X 5 4 5 3
+Y 1 5 2 2
+A 2 2 6 3
+B 5 7 8 6
+C 7 7 1 6
+D 6 7 9 7
+E 1 5 7 7
+F 8 5 4 1
+G 6 8 7 1
+H 1 3 8 4
+I 6 5 4 8
+J 4 3 2 7
+K 6 4 6 5
+L 7 2 4 5
+M 1 3 8 3
+N 4 4 3 3
+O 8 4 1 5
+P 5 3 8 2
+Q 5 1 5 1
+R 3 4 1 5
+S 6 6 6 7
+T 7 1 9 3
+U 6 5 1 8
+V 1 3 7 9
+W 6 4 1 2
+X 6 8 2 5
+Y 4 1 5 8
+A 8 2 1 4
+B 7 7 3 8
+C 3 5 8 8
+D 8 2 4 4
+E 4 4 5 1
+F 9 9 2 3
+G 2 9 9 5
+H 2 2 8 3
+I 8 9 5 8
+J 6 9 2 7
+K 7 4 9 7
+L 8 9 2 3
+M 1 4 3 6
+N 5 6 8 5
+O 4 7 1 6
+P 6 8 5 1
+Q 2 9 6 4
+R 2 4 8 2
+S 1 3 5 1
+T 2 5 3 6
+U 7 7 4 7
+V 3 7 3 9
+W 7 6 4 1
+X 3 8 5 2
+Y 2 3 2 6
+A 2 6 8 4
+B 6 8 3 3
+C 4 1 6 9
+D 8 4 7 3
+E 2 5 7 4
+F 1 3 6 2
+G 2 8 6 6
+H 3 6 6 9
+I 9 6 5 3
+J 3 8 6 4
+K 7 7 8 7
+L 3 2 2 2
+M 6 5 7 9
+N 3 9 6 5
+O 6 2 4 1
+P 1 7 8 6
+Q 4 5 5 8
+R 3 7 7 1
+S 8 1 2 1
+T 1 3 9 8
+U 3 2 7 6
+V 9 8 1 3
+W 4 5 4 1
+X 6 1 6 5
+Y 3 1 7 1
+A 8 7 6 2
+B 7 1 3 2
+C 6 1 2 5
+D 9 6 8 5
+E 9 1 2 5
+F 3 8 6 2
+G 5 7 7 6
+H 3 7 9 8
+I 9 7 1 1
+J 6 2 5 1
+K 6 1 3 1
+L 6 5 6 2
+M 7 4 4 7
+N 1 1 8 3
+O 4 4 3 3
+P 6 1 3 6
+Q 4 3 8 4
+R 7 6 8 6
+S 1 1 4 6
+T 9 1 7 4
+U 6 4 7 4
+V 9 7 9 6
+W 5 6 2 6
+X 3 7 6 1
+Y 9 2 3 4
+300
+P3=2
+P3=2
+P4=8
+P3=6
+P2=1
+P2=7
+P2=9
+P2=4
+P3=2
+P3=1
+P4=4
+P2=6
+P4=8
+P1=5
+P1=1
+P4=5
+P4=1
+P3=1
+P4=8
+P4=3
+P1=2
+P3=9
+P1=2
+P3=2
+P2=1
+P4=3
+P4=2
+P2=2
+P1=8
+P3=1
+P3=2
+P1=1
+P2=8
+P2=3
+P1=1
+P4=8
+P4=2
+P4=1
+P1=4
+P3=6
+P3=2
+P3=3
+P4=9
+P2=9
+P2=6
+P2=7
+P1=2
+P2=2
+P2=2
+P4=2
+P3=3
+P1=2
+P1=1
+P3=6
+P2=2
+P3=6
+P2=2
+P1=5
+P3=9
+P1=5
+P2=6
+P4=9
+P2=9
+P1=2
+P1=2
+P4=2
+P3=2
+P2=9
+P2=9
+P4=9
+P4=8
+P3=3
+P4=4
+P4=1
+P1=8
+P2=4
+P1=1
+P3=1
+P2=2
+P4=4
+P1=2
+P2=9
+P3=2
+P3=1
+P4=4
+P4=3
+P4=9
+P2=3
+P4=8
+P4=4
+P3=1
+P2=3
+P2=3
+P2=4
+P2=3
+P1=7
+P3=2
+P1=2
+P4=5
+P1=7
+P1=9
+P2=9
+P2=2
+P2=2
+P1=2
+P3=3
+P3=2
+P1=1
+P1=4
+P3=2
+P1=7
+P1=2
+P4=3
+P3=3
+P3=3
+P1=4
+P4=3
+P3=2
+P2=2
+P2=9
+P1=5
+P2=3
+P2=1
+P3=9
+P2=3
+P4=3
+P3=3
+P4=9
+P4=2
+P3=9
+P2=4
+P3=2
+P4=8
+P3=1
+P1=2
+P4=4
+P2=9
+P4=8
+P3=3
+P2=2
+P2=6
+P1=7
+P3=2
+P4=2
+P1=1
+P3=1
+P3=6
+P4=2
+P2=6
+P2=2
+P2=6
+P2=3
+P3=3
+P3=2
+P4=2
+P3=9
+P1=2
+P2=3
+P1=2
+P2=2
+P1=7
+P3=3
+P1=7
+P2=6
+P1=5
+P4=5
+P2=2
+P2=3
+P1=7
+P3=2
+P3=2
+P4=4
+P4=9
+P3=9
+P2=7
+P3=3
+P1=1
+P3=1
+P3=3
+P2=3
+P2=3
+P1=8
+P4=2
+P1=8
+P1=2
+P1=5
+P3=2
+P2=9
+P2=2
+P2=4
+P1=2
+P4=9
+P1=5
+P2=6
+P2=9
+P1=1
+P4=4
+P2=6
+P4=8
+P4=3
+P3=2
+P2=4
+P4=4
+P2=2
+P1=1
+P2=3
+P1=1
+P4=8
+P1=8
+P2=8
+P3=9
+P2=2
+P2=6
+P2=9
+P4=4
+P3=2
+P3=1
+P1=8
+P1=4
+P2=2
+P2=2
+P4=9
+P2=3
+P3=9
+P3=3
+P1=9
+P4=8
+P4=8
+P3=2
+P1=7
+P4=8
+P1=9
+P3=1
+P2=6
+P2=6
+P4=2
+P2=9
+P3=2
+P3=9
+P1=4
+P3=2
+P2=4
+P2=9
+P1=5
+P2=8
+P4=9
+P4=9
+P4=5
+P4=8
+P2=2
+P3=1
+P4=2
+P3=2
+P2=2
+P2=9
+P3=2
+P1=2
+P4=5
+P1=5
+P1=7
+P2=3
+P4=5
+P4=3
+P1=4
+P3=2
+P3=2
+P3=1
+P1=7
+P2=3
+P4=2
+P2=6
+P2=2
+P1=7
+P1=7
+P2=2
+P3=2
+P2=8
+P3=9
+P2=2
+P2=8
+P3=2
+P2=4
+P1=1
+P3=9
+P4=9
+P4=5
+P1=7
+P1=5
+P2=2
+P1=7
+P1=1
+P1=5
+P1=1
+P2=8
+P2=1
+P3=9
+P1=1
+P1=2
+P4=5
+P3=6
+
+92
+92
+94
+97
+95
+93
+73
+96
+92
+85
+104
+95
+94
+91
+92
+89
+86
+85
+94
+88
+77
+78
+77
+92
+95
+88
+94
+92
+85
+85
+92
+92
+92
+89
+92
+94
+94
+86
+81
+97
+92
+89
+91
+73
+95
+93
+77
+92
+92
+94
+89
+77
+92
+97
+92
+97
+92
+91
+78
+91
+95
+91
+73
+77
+77
+94
+92
+73
+73
+91
+94
+89
+104
+86
+85
+96
+92
+85
+92
+104
+77
+73
+92
+85
+104
+88
+91
+89
+94
+104
+85
+89
+89
+96
+89
+89
+92
+77
+89
+89
+89
+73
+92
+92
+77
+89
+92
+92
+81
+92
+89
+77
+88
+89
+89
+81
+88
+92
+92
+73
+91
+89
+95
+78
+89
+88
+89
+91
+94
+78
+96
+92
+94
+85
+77
+104
+73
+94
+89
+92
+95
+89
+92
+94
+92
+85
+97
+94
+95
+92
+95
+89
+89
+92
+94
+78
+77
+89
+77
+92
+89
+89
+89
+95
+91
+89
+92
+89
+89
+92
+92
+104
+91
+78
+93
+89
+92
+85
+89
+89
+89
+85
+94
+85
+77
+91
+92
+73
+92
+96
+77
+91
+91
+95
+73
+92
+104
+95
+94
+88
+92
+96
+104
+92
+92
+89
+92
+94
+85
+92
+78
+92
+95
+73
+104
+92
+85
+85
+81
+92
+92
+91
+89
+78
+89
+89
+94
+94
+92
+89
+94
+89
+85
+95
+95
+94
+73
+92
+78
+81
+92
+96
+73
+91
+92
+91
+91
+89
+94
+92
+85
+94
+92
+92
+73
+92
+77
+89
+91
+89
+89
+89
+88
+81
+92
+92
+85
+89
+89
+94
+95
+92
+89
+89
+92
+92
+92
+78
+92
+92
+92
+96
+92
+78
+91
+89
+89
+91
+92
+89
+92
+91
+92
+92
+95
+78
+92
+77
+89
+97
