@@ -13,7 +13,7 @@
     //   "name": "Current TS Tests File",
     //   "type": "node",
     //   "request": "launch",
-    //   "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+    //   "program": "${workspaceRoot}/node_modules/jest/bin/jest",
     //   "args": ["-r", "ts-node/register", "${relativeFile}"],
     //   "cwd": "${workspaceRoot}",
     }
