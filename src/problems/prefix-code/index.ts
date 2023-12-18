@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import { getTestCases } from "../../lib/fs";
 import type { TestCases } from "../../types/TestCases";
 
