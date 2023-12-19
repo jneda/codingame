@@ -88,6 +88,7 @@ class Drone implements DroneData {
     });
     console.error(JSON.stringify(unscannedBlips, null, 1));
 
+    // avoid uglies at all costs
     // chase scanned fish if possible
 
     const ownVisibleFish = this.getVisibleFish(visibleFish);
@@ -96,6 +97,39 @@ class Drone implements DroneData {
 
     // do we see fish?
     if (ownVisibleFish.length > 0) {
+      // do we see an ungly?
+      const visibleUglies = this.getVisibleUglies(visibleFish);
+      if (visibleUglies.length > 0) {
+        // better safe than sorry: go save scans if we have any
+        if (this.scans.length > 0) {
+          this.state === "SAVING";
+          return `MOVE ${this.pos.x} 0 0 FLEEING!`;
+        }
+        // else, run away
+        const closestUgly = visibleUglies[0];
+        const vectorToUgly = {
+          x: this.pos.x - closestUgly.pos.x,
+          y: this.pos.y - closestUgly.pos.y,
+        };
+        const oppositeUnitVector = {
+          x: (-1 / vectorToUgly.x) * vectorToUgly.x,
+          y: (-1 / vectorToUgly.y) * vectorToUgly.y,
+        };
+        const destination = {
+          x: Math.floor(oppositeUnitVector.x * 600),
+          y: Math.floor(oppositeUnitVector.y * 600),
+        };
+        if (isNaN(destination.x) || isNaN(destination.y)) {
+          console.error(
+            `${destination.x} or ${destination.y} is not a number!`
+          );
+          return `MOVE ${this.pos.x} ${Math.min(0, this.pos.y - 600)} 0 FLEEING BUG :(`;
+        }
+        return `MOVE ${this.pos.x + destination.x} ${
+          this.pos.y + destination.y
+        } 0 FLEEING!`;
+      }
+
       // are there fish we can chase off to deny the opponent a scan?
       const chaseableFish = this.getChaseableFish(ownVisibleFish, foeScans);
       // if so, chase the closest one
@@ -154,7 +188,7 @@ class Drone implements DroneData {
         return `MOVE ${targetX} ${targetY} ${this.light}`;
       } else {
         this.state = "SCANNING";
-        return "WAIT 0";
+        return `MOVE ${this.pos.x} ${this.pos.y + 600} 0`;
       }
     }
   }
@@ -182,6 +216,14 @@ class Drone implements DroneData {
       );
     });
     return chaseableFish;
+  }
+
+  getVisibleUglies(visibleFish: Fish[]) {
+    const visibleUglies = visibleFish.filter((fish) => fish.detail.type === -1);
+    return visibleUglies.sort(
+      (a, b) =>
+        euclideanDistance(this.pos, a.pos) - euclideanDistance(this.pos, b.pos)
+    );
   }
 }
 
@@ -301,10 +343,10 @@ function updateRadarBlips(myRadarBlips: Map<number, RadarBlip[]>) {
 function makeLane(index: number) {
   const lane: Vector[] = [];
 
-  const left = index === 0 ? 0 + FLASH_RADIUS : HALF_WIDTH + FLASH_RADIUS;
-  const right = index === 0 ? HALF_WIDTH - FLASH_RADIUS : WIDTH - FLASH_RADIUS;
-  const top = BIOME1_UPPER + FLASH_RADIUS;
-  const bottom = HEIGHT - FLASH_RADIUS;
+  const left = index === 0 ? 0 + SIGHT_RADIUS : HALF_WIDTH + SIGHT_RADIUS;
+  const right = index === 0 ? HALF_WIDTH - SIGHT_RADIUS : WIDTH - SIGHT_RADIUS;
+  const top = BIOME1_UPPER + SIGHT_RADIUS;
+  const bottom = HEIGHT - SIGHT_RADIUS;
 
   lane.push(
     index === 0 ? { x: left, y: top } : { x: right, y: top },
@@ -339,6 +381,11 @@ const FLASH_RADIUS = 2000;
 // initial data
 
 const fishDetails = getFishDetails();
+
+const uglies: number[] = [];
+fishDetails.forEach((fishDetail, fishId) => {
+  if (fishDetail.type === -1) uglies.push(fishId);
+});
 
 const team: Drone[] = [];
 
