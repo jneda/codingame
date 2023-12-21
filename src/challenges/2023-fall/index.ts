@@ -34,6 +34,164 @@ type State = "SCANNING" | "SAVING" | "CHASING";
 
 // classes
 
+class TeamManager {
+  fishDetails: Map<number, FishDetail>;
+  uglies: number[];
+  myScore: number;
+  foeScore: number;
+  myScans: number[];
+  foeScans: number[];
+  myDrones: DroneData[];
+  team: Drone[];
+  foeDrones: DroneData[];
+  myRadarBlips: Map<number, RadarBlip[]>;
+  visibleFish: Fish[];
+
+  constructor(fishDetails: Map<number, FishDetail>, uglies: number[]) {
+    this.fishDetails = fishDetails;
+    this.uglies = uglies;
+    this.myScore = 0;
+    this.foeScore = 0;
+    this.myScans = [];
+    this.foeScans = [];
+    this.myDrones = [];
+    this.team = [];
+    this.foeDrones = [];
+    this.myRadarBlips = new Map<number, RadarBlip[]>();
+    this.visibleFish = [];
+  }
+
+  update() {
+    this.myScore = parseInt(readline());
+    this.foeScore = parseInt(readline());
+
+    this.getScans();
+    this.getDrones();
+
+    this.getVisibleFish();
+    // console.error(this.visibleFish);
+
+    this.updateRadarBlips();
+  }
+
+  getScans() {
+    const myScans: number[] = [];
+    const foeScans: number[] = [];
+
+    const myScanCount = parseInt(readline());
+    for (let i = 0; i < myScanCount; i++) {
+      const fishId = parseInt(readline());
+      myScans.push(fishId);
+    }
+
+    const foeScanCount = parseInt(readline());
+    for (let i = 0; i < foeScanCount; i++) {
+      const fishId = parseInt(readline());
+      foeScans.push(fishId);
+    }
+
+    this.myScans = myScans;
+    this.foeScans = foeScans;
+  }
+
+  getDrones() {
+    const droneById = new Map<number, DroneData>();
+    const myDrones: DroneData[] = [];
+    const foeDrones: DroneData[] = [];
+    const myRadarBlips = new Map<number, RadarBlip[]>();
+
+    const myDroneCount = parseInt(readline());
+    for (let i = 0; i < myDroneCount; i++) {
+      const [droneId, droneX, droneY, dead, battery] = readline()
+        .split(" ")
+        .map(Number);
+      const pos = { x: droneX, y: droneY };
+      const drone = { droneId, pos, dead, battery, scans: [] };
+      droneById.set(droneId, drone);
+      myDrones.push(drone);
+      myRadarBlips.set(droneId, []);
+    }
+
+    if (this.team.length === 0) {
+      const leftmostDrone = myDrones
+        .slice()
+        .sort((a, b) => a.pos.x - b.pos.x)[0];
+      for (let i = 0; i < myDrones.length; i++) {
+        const { droneId, pos, dead, battery, scans } = myDrones[i];
+        const droneIndex = droneId === leftmostDrone.droneId ? 0 : 1;
+        const drone = new Drone(
+          droneId,
+          pos,
+          dead,
+          battery,
+          scans,
+          droneIndex,
+          this
+        );
+        this.team.push(drone);
+      }
+    } else {
+      for (const data of myDrones) {
+        const { droneId, pos, dead, battery, scans } = data;
+        const drone = this.team.find((drone) => drone.droneId === droneId);
+        drone?.update(pos, dead, battery, scans);
+      }
+    }
+
+    const foeDroneCount = parseInt(readline());
+    for (let i = 0; i < foeDroneCount; i++) {
+      const [droneId, droneX, droneY, dead, battery] = readline()
+        .split(" ")
+        .map(Number);
+      const pos = { x: droneX, y: droneY };
+      const drone = { droneId, pos, dead, battery, scans: [] };
+      droneById.set(droneId, drone);
+      foeDrones.push(drone);
+    }
+
+    const droneScanCount = parseInt(readline());
+    for (let i = 0; i < droneScanCount; i++) {
+      const [droneId, fishId] = readline().split(" ").map(Number);
+      droneById.get(droneId)!.scans.push(fishId);
+    }
+
+    this.myDrones = myDrones;
+    this.myRadarBlips = myRadarBlips;
+    this.foeDrones = foeDrones;
+  }
+
+  getVisibleFish() {
+    const visibleFish: Fish[] = [];
+
+    const visibleFishCount = parseInt(readline());
+    for (let i = 0; i < visibleFishCount; i++) {
+      const [fishId, fishX, fishY, fishVx, fishVy] = readline()
+        .split(" ")
+        .map(Number);
+      const pos = { x: fishX, y: fishY };
+      const speed = { x: fishVx, y: fishVy };
+      visibleFish.push({
+        fishId,
+        pos,
+        speed,
+        detail: fishDetails.get(fishId)!,
+      });
+    }
+
+    this.visibleFish = visibleFish;
+  }
+
+  updateRadarBlips() {
+    const myRadarBlipCount = parseInt(readline());
+    for (let i = 0; i < myRadarBlipCount; i++) {
+      const [_droneId, _fishId, dir] = readline().split(" ");
+      const droneId = parseInt(_droneId);
+      const fishId = parseInt(_fishId);
+      this.myRadarBlips.get(droneId)!.push({ fishId, dir });
+    }
+  }
+}
+
 class Drone implements DroneData {
   droneId: number;
   pos: Vector;
@@ -45,6 +203,8 @@ class Drone implements DroneData {
   currentTarget: number;
   light: number;
   i: number;
+  teamManager: TeamManager;
+  turnsSinceLightsOn: number;
 
   constructor(
     droneId: number,
@@ -52,7 +212,8 @@ class Drone implements DroneData {
     dead: number,
     battery: number,
     scans: number[],
-    i: number
+    i: number,
+    teamManager: TeamManager
   ) {
     this.droneId = droneId;
     this.pos = pos;
@@ -64,6 +225,8 @@ class Drone implements DroneData {
     this.currentTarget = 0;
     this.light = 0;
     this.i = i;
+    this.teamManager = teamManager;
+    this.turnsSinceLightsOn = 0;
   }
 
   update = (pos: Vector, dead: number, battery: number, scans: number[]) => {
@@ -73,86 +236,47 @@ class Drone implements DroneData {
     this.scans = scans;
   };
 
-  takeAction(
-    visibleFish: Fish[],
-    myScans: number[],
-    foeScans: number[],
-    radarBlips: RadarBlip[]
-  ) {
+  takeAction() {
     // TO DO: make better use of the target and state
 
-    console.error(JSON.stringify(this, null, 1));
+    if (this.dead) return `WAIT 0`;
 
-    const unscannedBlips = radarBlips.filter(({ fishId }) => {
-      return !this.scans.includes(fishId) && !myScans.includes(fishId);
-    });
-    console.error(JSON.stringify(unscannedBlips, null, 1));
+    // handle light
+
+    this.handleLight();
+
+    // handle radar blips
+
+    this.handleBlips();
 
     // avoid uglies at all costs
     // chase scanned fish if possible
 
-    const ownVisibleFish = this.getVisibleFish(visibleFish);
+    const ownVisibleFish = this.getVisibleFish();
 
     const previousState = this.state;
 
+    let action: string | undefined;
+
     // do we see fish?
     if (ownVisibleFish.length > 0) {
-      // do we see an ungly?
-      const visibleUglies = this.getVisibleUglies(visibleFish);
-      if (visibleUglies.length > 0) {
-        // better safe than sorry: go save scans if we have any
-        if (this.scans.length > 0) {
-          this.state === "SAVING";
-          return `MOVE ${this.pos.x} 0 0 FLEEING!`;
-        }
-        // else, run away
-        const closestUgly = visibleUglies[0];
-        const vectorToUgly = {
-          x: this.pos.x - closestUgly.pos.x,
-          y: this.pos.y - closestUgly.pos.y,
-        };
-        const oppositeUnitVector = {
-          x: (-1 / vectorToUgly.x) * vectorToUgly.x,
-          y: (-1 / vectorToUgly.y) * vectorToUgly.y,
-        };
-        const destination = {
-          x: Math.floor(oppositeUnitVector.x * 600),
-          y: Math.floor(oppositeUnitVector.y * 600),
-        };
-        if (isNaN(destination.x) || isNaN(destination.y)) {
-          console.error(
-            `${destination.x} or ${destination.y} is not a number!`
-          );
-          return `MOVE ${this.pos.x} ${Math.min(0, this.pos.y - 600)} 0 FLEEING BUG :(`;
-        }
-        return `MOVE ${this.pos.x + destination.x} ${
-          this.pos.y + destination.y
-        } 0 FLEEING!`;
-      }
+      // handle uglies
 
-      // are there fish we can chase off to deny the opponent a scan?
-      const chaseableFish = this.getChaseableFish(ownVisibleFish, foeScans);
-      // if so, chase the closest one
-      if (chaseableFish.length > 0) {
-        const fish = chaseableFish[0];
-        // turn off the light if not needed
-        if (euclideanDistance(this.pos, fish.pos) <= SIGHT_RADIUS)
-          this.light = 0;
-        this.state = "CHASING";
-        return `MOVE ${fish.pos.x} ${fish.pos.y} ${this.light} CHASING`;
-      }
+      action = this.handleUglies();
+      if (action) return action;
+
+      // chase fish
+
+      action = this.chaseFish(ownVisibleFish);
+      if (action) return action;
     }
 
     this.state = previousState === "CHASING" ? "SCANNING" : previousState;
 
-    // reset target and light
+    // reset target
 
     let targetX = 0;
     let targetY = 0;
-    this.light = 0;
-    if (this.battery > 5) {
-      this.light = 1;
-    }
 
     // if we have scans, go save them
 
@@ -167,14 +291,14 @@ class Drone implements DroneData {
       targetX = x;
       targetY = y;
 
-      if (this.pos.x !== targetX || this.pos.y !== targetY) {
-        return `MOVE ${targetX} ${targetY} ${this.light} TARGET ${this.currentTarget}`;
+      if (magnitude(subtractV(this.pos, { x: targetX, y: targetY })) > 600) {
+        return `MOVE ${targetX} ${targetY} ${this.light} TARGET ${this.currentTarget} ID: ${this.droneId} INDEX: ${this.i}`;
       } else {
         this.currentTarget++;
         if (this.currentTarget === this.lane.length) {
           this.currentTarget = 0;
         }
-        return "WAIT 1";
+        return `WAIT ${this.light}`;
       }
     }
 
@@ -193,10 +317,124 @@ class Drone implements DroneData {
     }
   }
 
-  getVisibleFish(visibleFish: Fish[]) {
-    const ownVisibleFish = visibleFish.filter((fish) => {
+  handleUglies() {
+    // do we see an ungly?
+    const visibleUglies = this.getVisibleUglies();
+    if (visibleUglies.length > 0) {
+      // try and run away
+      const closestUgly = visibleUglies[0];
+      const vectorToUgly = subtractV(this.pos, closestUgly.pos);
+
+      const uglyDirection = direction(vectorToUgly);
+      const uglyDistance = magnitude(vectorToUgly);
+
+      const oppositeV = {
+        mag: 1,
+        dir: uglyDirection + Math.PI, // clockwise
+      };
+      let oppositeP = scale(toXY(oppositeV), 600);
+
+      let destination = addV(this.pos, oppositeP);
+
+      let tries;
+
+      if (destination.x < 0) {
+        tries = 0;
+        while (destination.x < 0) {
+          destination = addV(
+            this.pos,
+            scale(
+              normalize(
+                addV(
+                  toXY(oppositeV),
+                  toXY({ mag: 1, dir: (Math.PI / 4) * tries + 1 })
+                )
+              ),
+              600
+            )
+          );
+          tries++;
+        }
+      }
+
+      if (destination.x > WIDTH - 1) {
+        tries = 0;
+        while (destination.x > WIDTH - 1) {
+          destination = addV(
+            this.pos,
+            scale(
+              normalize(
+                addV(
+                  toXY(oppositeV),
+                  toXY({ mag: 1, dir: (-Math.PI / 4) * tries + 1 })
+                )
+              ),
+              600
+            )
+          );
+          tries++;
+        }
+      }
+
+      console.error({ current: this.pos, destination });
+      console.error({ dist: magnitude(subtractV(this.pos, destination)) });
+
+      if (isNaN(destination.x) || isNaN(destination.y)) {
+        console.error(`${destination.x} or ${destination.y} is not a number!`);
+        return `MOVE ${this.pos.x} ${Math.min(
+          0,
+          this.pos.y - 600
+        )} 0 FLEEING BUG :(`;
+      }
+
+      return `MOVE ${Math.floor(destination.x)} ${Math.floor(
+        destination.y
+      )} 0 FLEEING!`;
+    }
+  }
+
+  chaseFish(ownVisibleFish: Fish[]) {
+    // are there fish we can chase off to deny the opponent a scan?
+    const chaseableFish = this.getChaseableFish(ownVisibleFish);
+    // if so, chase the closest one
+    if (chaseableFish.length > 0) {
+      const fish = chaseableFish[0];
+      // turn off the light if not needed
+      if (euclideanDistance(this.pos, fish.pos) <= SIGHT_RADIUS) this.light = 0;
+      this.state = "CHASING";
+      return `MOVE ${fish.pos.x} ${fish.pos.y} ${this.light} CHASING`;
+    }
+  }
+
+  handleLight() {
+    if (this.battery > 5 && this.pos.y > 2000 && this.turnsSinceLightsOn >= 3) {
+      this.light = 1;
+      this.turnsSinceLightsOn = 0;
+    } else {
+      this.light = 0;
+      this.turnsSinceLightsOn++;
+    }
+  }
+
+  handleBlips() {
+    const radarBlips = teamManager.myRadarBlips.get(this.droneId)!;
+    const unscannedBlips = radarBlips.filter(({ fishId }) => {
+      return (
+        !this.scans.includes(fishId) &&
+        !this.teamManager.myScans.includes(fishId)
+      );
+    });
+  }
+
+  getVisibleFish() {
+    const ownVisibleFish = this.teamManager.visibleFish.filter((fish) => {
       const dist = euclideanDistance(this.pos, fish.pos);
-      const sightRadius = this.light === 1 ? FLASH_RADIUS : SIGHT_RADIUS;
+      const sightRadius =
+        this.light === 1
+          ? FLASH_RADIUS
+          : fish.detail.type > -1
+          ? SIGHT_RADIUS
+          : SIGHT_RADIUS + 300;
       return dist <= sightRadius;
     });
     return ownVisibleFish.sort(
@@ -205,21 +443,24 @@ class Drone implements DroneData {
     );
   }
 
-  getChaseableFish(ownVisibleFish: Fish[], foeScans: number[]) {
+  getChaseableFish(ownVisibleFish: Fish[]) {
     const border = this.i === 0 ? 0 : WIDTH;
 
     const chaseableFish = ownVisibleFish.filter((fish) => {
       const fishDistToBorder = Math.abs(border - fish.pos.x);
       const ownDistToBorder = Math.abs(border - this.pos.x);
       return (
-        fishDistToBorder < ownDistToBorder && !foeScans.includes(fish.fishId)
+        fishDistToBorder < ownDistToBorder &&
+        !this.teamManager.foeScans.includes(fish.fishId)
       );
     });
     return chaseableFish;
   }
 
-  getVisibleUglies(visibleFish: Fish[]) {
-    const visibleUglies = visibleFish.filter((fish) => fish.detail.type === -1);
+  getVisibleUglies() {
+    const visibleUglies = this.teamManager.visibleFish.filter(
+      (fish) => fish.detail.type === -1
+    );
     return visibleUglies.sort(
       (a, b) =>
         euclideanDistance(this.pos, a.pos) - euclideanDistance(this.pos, b.pos)
@@ -243,103 +484,6 @@ function getFishDetails() {
   return fishDetails;
 }
 
-function getScans() {
-  const myScans: number[] = [];
-  const foeScans: number[] = [];
-
-  const myScanCount = parseInt(readline());
-  for (let i = 0; i < myScanCount; i++) {
-    const fishId = parseInt(readline());
-    myScans.push(fishId);
-  }
-
-  const foeScanCount = parseInt(readline());
-  for (let i = 0; i < foeScanCount; i++) {
-    const fishId = parseInt(readline());
-    foeScans.push(fishId);
-  }
-
-  return { myScans, foeScans };
-}
-
-function getDrones(team: Drone[]) {
-  const droneById = new Map<number, DroneData>();
-  const myDrones: DroneData[] = [];
-  const foeDrones: DroneData[] = [];
-  const myRadarBlips = new Map<number, RadarBlip[]>();
-
-  const myDroneCount = parseInt(readline());
-  for (let i = 0; i < myDroneCount; i++) {
-    const [droneId, droneX, droneY, dead, battery] = readline()
-      .split(" ")
-      .map(Number);
-    const pos = { x: droneX, y: droneY };
-    const drone = { droneId, pos, dead, battery, scans: [] };
-    droneById.set(droneId, drone);
-    myDrones.push(drone);
-    myRadarBlips.set(droneId, []);
-  }
-
-  if (team.length === 0) {
-    for (let i = 0; i < myDrones.length; i++) {
-      const { droneId, pos, dead, battery, scans } = myDrones[i];
-      const drone = new Drone(droneId, pos, dead, battery, scans, i);
-      team.push(drone);
-    }
-  } else {
-    for (const data of myDrones) {
-      const { droneId, pos, dead, battery, scans } = data;
-      const drone = team.find((drone) => drone.droneId === droneId);
-      drone?.update(pos, dead, battery, scans);
-    }
-  }
-
-  const foeDroneCount = parseInt(readline());
-  for (let i = 0; i < foeDroneCount; i++) {
-    const [droneId, droneX, droneY, dead, battery] = readline()
-      .split(" ")
-      .map(Number);
-    const pos = { x: droneX, y: droneY };
-    const drone = { droneId, pos, dead, battery, scans: [] };
-    droneById.set(droneId, drone);
-    foeDrones.push(drone);
-  }
-
-  const droneScanCount = parseInt(readline());
-  for (let i = 0; i < droneScanCount; i++) {
-    const [droneId, fishId] = readline().split(" ").map(Number);
-    droneById.get(droneId)!.scans.push(fishId);
-  }
-
-  return { myDrones, myRadarBlips, foeDrones };
-}
-
-function getVisibleFish() {
-  const visibleFish: Fish[] = [];
-
-  const visibleFishCount = parseInt(readline());
-  for (let i = 0; i < visibleFishCount; i++) {
-    const [fishId, fishX, fishY, fishVx, fishVy] = readline()
-      .split(" ")
-      .map(Number);
-    const pos = { x: fishX, y: fishY };
-    const speed = { x: fishVx, y: fishVy };
-    visibleFish.push({ fishId, pos, speed, detail: fishDetails.get(fishId)! });
-  }
-
-  return visibleFish;
-}
-
-function updateRadarBlips(myRadarBlips: Map<number, RadarBlip[]>) {
-  const myRadarBlipCount = parseInt(readline());
-  for (let i = 0; i < myRadarBlipCount; i++) {
-    const [_droneId, _fishId, dir] = readline().split(" ");
-    const droneId = parseInt(_droneId);
-    const fishId = parseInt(_fishId);
-    myRadarBlips.get(droneId)!.push({ fishId, dir });
-  }
-}
-
 function makeLane(index: number) {
   const lane: Vector[] = [];
 
@@ -358,8 +502,57 @@ function makeLane(index: number) {
   return lane;
 }
 
+// vector utils
+
 function euclideanDistance(a: Vector, b: Vector) {
   return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+}
+
+function toPolar({ x, y }: Vector) {
+  return {
+    mag: magnitude({ x, y }),
+    dir: direction({ x, y }),
+  };
+}
+
+function toXY({ mag, dir }: { mag: number; dir: number }) {
+  return {
+    x: Math.cos(dir) * mag,
+    y: Math.sin(dir) * mag,
+  };
+}
+
+function direction(v: Vector) {
+  return Math.atan2(v.y, v.x);
+}
+
+function magnitude({ x, y }: Vector) {
+  return Math.hypot(x, y);
+}
+
+function addV(v1: Vector, v2: Vector) {
+  return {
+    x: v1.x + v2.x,
+    y: v1.y + v2.y,
+  };
+}
+
+function subtractV(v1: Vector, v2: Vector) {
+  return {
+    x: v2.x - v1.x,
+    y: v2.y - v1.y,
+  };
+}
+
+function scale(v: Vector, scalar: number) {
+  return {
+    x: v.x * scalar,
+    y: v.y * scalar,
+  };
+}
+
+function normalize(v: Vector) {
+  return scale(v, 1 / magnitude(v));
 }
 
 // constants
@@ -387,30 +580,18 @@ fishDetails.forEach((fishDetail, fishId) => {
   if (fishDetail.type === -1) uglies.push(fishId);
 });
 
-const team: Drone[] = [];
+const teamManager = new TeamManager(fishDetails, uglies);
 
 // game loop
 while (true) {
   // data updates
-  const myScore = parseInt(readline());
-  const foeScore = parseInt(readline());
-
-  const { myScans, foeScans } = getScans();
-  const { myDrones, myRadarBlips, foeDrones } = getDrones(team);
-
-  const visibleFish = getVisibleFish();
-
-  updateRadarBlips(myRadarBlips);
+  teamManager.update();
 
   // drone actions
-  for (let i = 0; i < team.length; i++) {
-    const drone = team[i];
-    const action = drone.takeAction(
-      visibleFish,
-      myScans,
-      foeScans,
-      myRadarBlips.get(drone.droneId)!
-    );
+  for (let i = 0; i < teamManager.team.length; i++) {
+    const drone = teamManager.team[i];
+    // console.error({ drone });
+    const action = drone.takeAction();
     console.log(action);
   }
 }
