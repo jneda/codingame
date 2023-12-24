@@ -1,0 +1,5 @@
+i+j-k
+i-j+k
+
+Direction: -j+k
+Distance: 2.83
